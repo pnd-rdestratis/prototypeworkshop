@@ -11,6 +11,7 @@ st.sidebar.write("""
 3. The extracted table will be displayed.
 4. Click the 'Download CSV' button to download the table as a CSV file.
 """)
+st.image("logo.png", width=150)
 st.title('Lieferschein to Table Converter')
 
 uploaded_image = st.file_uploader("Upload Lieferschein image:", type=["png", "jpg", "jpeg"])
