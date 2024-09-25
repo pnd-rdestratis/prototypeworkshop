@@ -11,7 +11,7 @@ st.sidebar.write("""
 3. Tabelle runterladen
 """)
 st.image("logo.png", width=150)
-st.title('Lieferschein to Table Converter')
+st.title('Prototyp: Lieferschein - Tabelle Konverterter')
 
 uploaded_image = st.file_uploader("Upload Lieferschein:", type=["png", "jpg", "jpeg"])
 
