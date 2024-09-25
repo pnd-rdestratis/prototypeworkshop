@@ -3,15 +3,15 @@ import pandas as pd
 from query_iptc import process_lieferschein_image
 import os
 
-st.set_page_config(page_title="Lieferschein to Table Converter")
-st.sidebar.title("How to Use")
+st.set_page_config(page_title="Prototyp: Lieferschein zu Tabelle Konverter")
+st.sidebar.title("How To")
 st.sidebar.write("""
 1. Lieferschein hochladen
 2. Konvertieren
 3. Tabelle runterladen
 """)
 st.image("logo.png", width=150)
-st.title('Prototyp: Lieferschein zu Tabelle Konverter ')
+st.title('Prototyp: Lieferschein zu Tabelle Konverter')
 
 uploaded_image = st.file_uploader("Upload Lieferschein:", type=["png", "jpg", "jpeg"])
 
