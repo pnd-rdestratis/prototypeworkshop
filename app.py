@@ -16,7 +16,7 @@ st.title('Prototyp: Lieferschein zu Tabelle Konverter ')
 uploaded_image = st.file_uploader("Upload Lieferschein:", type=["png", "jpg", "jpeg"])
 
 if uploaded_image is not None:
-    if st.button('Convert to Table'):
+    if st.button('Konvertieren'):
         anthropic_api_key = st.secrets["ANTHROPIC_API_KEY"]
         if not anthropic_api_key:
             st.error("ANTHROPIC_API_KEY is not set. Please set the environment variable and restart the app.")
