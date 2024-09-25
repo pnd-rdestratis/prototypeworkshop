@@ -6,15 +6,14 @@ import os
 st.set_page_config(page_title="Lieferschein to Table Converter")
 st.sidebar.title("How to Use")
 st.sidebar.write("""
-1. Upload an image of a Lieferschein (delivery note) using the file uploader.
-2. Click the 'Convert to Table' button to extract the table from the Lieferschein.
-3. The extracted table will be displayed.
-4. Click the 'Download CSV' button to download the table as a CSV file.
+1. Lieferschein hochladen
+2. Konvertieren
+3. Tabelle runterladen
 """)
 st.image("logo.png", width=150)
 st.title('Lieferschein to Table Converter')
 
-uploaded_image = st.file_uploader("Upload Lieferschein image:", type=["png", "jpg", "jpeg"])
+uploaded_image = st.file_uploader("Upload Lieferschein:", type=["png", "jpg", "jpeg"])
 
 if uploaded_image is not None:
     if st.button('Convert to Table'):
@@ -22,7 +21,7 @@ if uploaded_image is not None:
         if not anthropic_api_key:
             st.error("ANTHROPIC_API_KEY is not set. Please set the environment variable and restart the app.")
         else:
-            with st.spinner('Converting Lieferschein to table...'):
+            with st.spinner('Konvertiere Lieferschein zu Tabelle...'):
                 image_bytes = uploaded_image.getvalue()
                 try:
                     table_data = process_lieferschein_image(image_bytes, anthropic_api_key)
@@ -41,10 +40,10 @@ if uploaded_image is not None:
                     else:
                         raise ValueError("Unexpected data format")
                     
-                    st.success('Conversion complete!')
+                    st.success('Erledigt')
                     
                     # Display the table
-                    st.subheader("Extracted Table")
+                    st.subheader("Tabelle")
                     st.dataframe(df)
                     
                     # Add download button
