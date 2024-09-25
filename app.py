@@ -58,4 +58,4 @@ if uploaded_image is not None:
                     st.error(f"An error occurred during processing: {str(e)}")
                     st.write("Data causing the error:", table_data)  # Debug: Print problematic data
 else:
-    st.info("Please upload a Lieferschein image to convert to a table.")
+    st.info("Bitte Lieferschein hochladen.")
