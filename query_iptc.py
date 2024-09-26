@@ -29,7 +29,7 @@ def process_lieferschein_image(image_bytes, anthropic_api_key):
         "content": """You are an expert in extracting information from Lieferschein (delivery note) images. 
         Your task is to analyze the image of a Lieferschein and extract the relevant information into a structured table format. 
         Focus on details such as item descriptions, quantities, prices, dates, and any other relevant information typically found on a Lieferschein. 
-        Return the extracted data as a JSON object representing a table, where each key is a column name and its value is a list of entries for that column."""
+        Return the extracted data as a JSON object representing a table, where each key is a column name and its value is a list of entries for that column Do not add any comments just return the json without any further information."""
     }
     
     user_message = {
