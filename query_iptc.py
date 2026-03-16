@@ -7,8 +7,12 @@ from langchain_anthropic import ChatAnthropic
 
 def process_lieferschein_response(response):
     result = response.content.strip()
+    if result.startswith("```"):
+        result = result.split("```", 2)[1]
+        if result.startswith("json"):
+            result = result[4:]
+        result = result.strip()
     try:
-        # Assuming the model returns a JSON string with table data
         table_data = json.loads(result)
         return table_data
     except json.JSONDecodeError:
