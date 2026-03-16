@@ -22,7 +22,7 @@ def process_lieferschein_image(image_bytes, anthropic_api_key):
     image.save(buffered, format="JPEG")
     base64_image = base64.b64encode(buffered.getvalue()).decode('utf-8')
 
-    llm = ChatAnthropic(anthropic_api_key=anthropic_api_key, model="claude-3-opus-20240229")
+    llm = ChatAnthropic(anthropic_api_key=anthropic_api_key, model="claude-sonnet-4-6")
     
     system_message = {
         "role": "system", 
